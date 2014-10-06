@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./templates/template_default.xhtml">
+
+    <ui:define name="complementTitreEtH1">Menu du TP2</ui:define>
+
+    <ui:define name="content">
+        <ul>
+            <li><h:link outcome="formulaire_1.xhtml" value="Exercice 1"/> : page formulaire_1.xhtml appelle affichage_1.xhtml</li>
+            Remarques : <br/>
+            <ul><li>L'URL affiché par le navigateur a toujours une page de retard (voir explication dans le cours) ;</li>
+                <li>Si on recharge la page qui affiche les 5 nombres, le navigateur affiche un message d'avertissement (sous Firefox : "Pour afficher cette page, les informations précédemment transmises par Firefox doivent être renvoyées. Ceci répétera toute action (telle qu'une recherche ou un ordre d'achat) entreprise précédemment.") car il pense qu'il s'agit de la page de soumission du nombre tapé par l'utilisateur. Si on clique sur "Renvoyer", le formulaire est soumis à nouveau (on imagine que ça peut poser des problèmes si le formulaire conduit à un paiement en ligne !).</li>
+                <li>quand on met un marque-page sur la page qui affiche les nombres, c'est la page formulaire_1.xhtml qui est enregistré et on n'obtient donc pas ce qu'il faut quand on utilise le marque-page.</li></ul>
+            <li><h:link outcome="formulaire_2.xhtml" value="Exercice 2"/> : idem avec un redirect au lieu d'un forward (les URLs sont ok cette fois)</li>
+            Remarques : Les URL sont maintenant corrects mais les bons nombres ne s'affichent pas : 0, 1, 2, 3, 4 sont maintenant toujours affichés, quel que soit le nombre saisi par l'utilisateur.
+            Explication : la portée du bean est la requête. La redirection démarre une nouvelle requête pour afficher affichage_2. Un nouveau bean est donc créé et ce nouveau bean n'a pas la valeur saisie par l'utilisateur.
+            Il faut donc trouver un moyen de passer cette valeur à la 2ème requête. Nous allons voir comment dans le dernier exercice.
+            <li><h:link outcome="formulaire_3.xhtml" value="Exercice 3"/> : utiliser les view params</li>
+            Remarques : le résultat est parfait !<br/>
+            <ul>
+                <li>L'URL affiché par le navigateur est bien synchronisé avec la page affichée.</li>
+                <li>Les bons nombres sont affichés par la page affichage_3.</li>
+                <li>On peut garder le résultat dans un marque-page pour faire afficher les 5 nombres qui suivent un certain nombre.</li>
+            </ul>
+            <li><h:link outcome="formulaire_4.xhtml" value="Exercice 4"/> : idem exercice 3, mais... Le nombre précédemment saisi apparaisse par défaut dans le formulaire lorsque veut saisire un autre nombre !</li>
+
+        </ul>
+    </ui:define>
+
+</ui:composition>
