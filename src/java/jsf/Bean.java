@@ -10,6 +10,7 @@ import javax.enterprise.context.RequestScoped;
 public class Bean {
 
     private int nombre;
+    private int old;
 
     public int getNombre() {
         return nombre;
@@ -19,6 +20,14 @@ public class Bean {
         this.nombre = nombre;
     }
 
+    public int getOld() {
+        return old;
+    }
+
+    public void setOld(int old) {
+        this.old = old;
+    }
+    
     public List<Integer> getNombresSuivants() {
         int nb = 5;
         List<Integer> t = new ArrayList<>(nb);

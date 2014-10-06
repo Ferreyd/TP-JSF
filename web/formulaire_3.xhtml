@@ -1,23 +1,11 @@
-<?xml version='1.0' encoding='UTF-8' ?>  
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-<html xmlns="http://www.w3.org/1999/xhtml"  
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">  
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./templates/template_formulaire.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    
+    <ui:param name="numEx" value="3"/>
+    <ui:param name="query" value="faces-redirect=true&amp;includeViewParams=true"/>
 
-    <h:head>  
-        <title>Application&gt;formulaire_3</title>  
-    </h:head> 
-    <f:metadata>  
-        <f:viewParam name="nombre" value="#{bean.nombre}"/>  
-    </f:metadata> 
-    <h:body>  
-
-        <h1>Applicationformulaire_3</h1>  
-
-        <h:form>  
-            <h:outputLabel value="Entrez un nombre" for="nombre"/>  
-            <h:inputText id="nombre" value="#{bean.nombre}"/>  
-            <h:commandButton value="Valider" action="affichage_3?faces-redirect=true&amp;includeViewParams=true"/>  
-        </h:form>  
-    </h:body>  
-</html> 
+</ui:composition>
